@@ -153,6 +153,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\camera.cpp" />
+    <ClCompile Include="source\character.cpp" />
     <ClCompile Include="source\debugProc.cpp" />
     <ClCompile Include="source\fade.cpp" />
     <ClCompile Include="source\game.cpp" />
@@ -180,6 +181,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\camera.h" />
+    <ClInclude Include="source\character.h" />
     <ClInclude Include="source\debugProc.h" />
     <ClInclude Include="source\fade.h" />
     <ClInclude Include="source\game.h" />

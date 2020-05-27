@@ -71,10 +71,10 @@ void CTutorial::Init(void)
 	// メッシュ球の生成処理
 	m_pMeshSphere = CMeshSphere::Create();
 
-	// プレイヤー生成
-	m_pPlayer = CPlayer::Create();
-	// プレイヤ位置設定
-	m_pPlayer->SetPos(D3DXVECTOR3(0, 10, 0));
+	//// プレイヤー生成
+	//m_pPlayer = CPlayer::Create();
+	//// プレイヤ位置設定
+	//m_pPlayer->SetPos(D3DXVECTOR3(0, 10, 0));
 
 	// メッシュフィールド生成
 	m_pMeshField = CMeshField::Create();

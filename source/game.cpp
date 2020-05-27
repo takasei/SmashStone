@@ -23,6 +23,7 @@
 #include "pause.h"
 #include "inputGamepad.h"
 #include "meshSphere.h"
+#include "character.h"
 
 //==================================================================================================================
 //	ƒ}ƒNƒ’è‹`

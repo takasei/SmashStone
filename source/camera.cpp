@@ -254,6 +254,7 @@ void CCamera::Update(void)
 	}
 
 #ifdef _DEBUG
+
 	// キーボードの[←]が押されたとき
 	if (pInputKeyboard->GetKeyboardPress(DIK_LEFTARROW))
 	{

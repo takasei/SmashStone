@@ -56,7 +56,6 @@ void CMotionModel::Init(void)
 	m_move = D3DXVECTOR3(0.0f, 0.0f, 0.0f);				// 移動量
 	m_pParent = NULL;									// 親モデル番号
 	m_type = MODEL_PENGUIN_BODY;						// モデルタイプ
-	m_bRespawn = false;									// リスポーンしたかどうか
 }
 
 //==================================================================================================================
@@ -157,24 +156,6 @@ void CMotionModel::Draw(void)
 	// モデルの描画
 	for (int nCnt = 0; nCnt < (int)m_nNumMat[m_type]; nCnt++)
 	{
-		// ゲームのとき
-		if (CRenderer::GetMode() == CRenderer::MODE_GAME)
-		{
-			// リスポーンしたとき
-			if (m_bRespawn == true)
-			{
-				// モデル点滅用カウンタ
-				for (int nCntCol = 0; nCntCol < 20; nCntCol++)
-				{
-					// マテリアルの色設定
-					pMat[nCnt].MatD3D.Diffuse.a = (nCntCol % 2) * 1.0f;
-				}
-
-				// リスポーンしていない状態にする
-				m_bRespawn = false;
-			}
-		}
-
 		// マテリアルの設定
 		pDevice->SetMaterial(&pMat[nCnt].MatD3D);
 

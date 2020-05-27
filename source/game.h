@@ -23,6 +23,7 @@ class CLogo;
 class CModel;
 class CPause;
 class CMeshSphere;
+class CCharacter;
 
 //==================================================================================================================
 //
@@ -61,8 +62,6 @@ public:
 protected:
 
 private:
-	void SetModel(void);						// モデルの設定
-
 	static GAMESTATE m_gameState;				// ゲーム状態
 	static CPlayer *m_pPlayer;					// プレイヤーの情報ポインタ
 	static CMeshField *m_pMeshField;			// メッシュフィールドの情報ポインタ

@@ -91,7 +91,5 @@ private:
 	D3DXVECTOR3 m_rot;											// ‰ñ“]
 	D3DXVECTOR3 m_size;											// ‘å‚«‚³
 	D3DXVECTOR3 m_move;											// ˆÚ“®—Ê
-
-	bool m_bRespawn;											// ƒŠƒXƒ|[ƒ“‚µ‚½‚©‚Ç‚¤‚©
 };
 #endif
