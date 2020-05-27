@@ -16,7 +16,6 @@
 // 前方宣言
 //==================================================================================================================
 class CCamera;
-class CPlayer;
 
 //==================================================================================================================
 //
@@ -46,7 +45,6 @@ protected:
 
 private:
 	static CCamera *m_pCamera;			// カメラ情報
-	static CPlayer *m_pPlayer;			// プレイヤー情報
 
 	D3DXMATRIX m_mtxProjection;			// プロジェクションマトリックス
 	D3DXMATRIX m_mtxView;				// ビューマトリックス
@@ -63,5 +61,7 @@ private:
 	int m_nCntTitleFade;				// タイトルフェードのカウンタ
 
 	float m_fDistance;					// 距離
+
+	bool m_bCameraMode;					// カメラモードかどうか
 };
 #endif
