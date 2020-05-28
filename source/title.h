@@ -20,7 +20,7 @@ class CLight;
 class CPolygon;
 class CMeshField;
 class CLogo;
-class CPlayer;
+class CCharacter;
 class CMeshSphere;
 class CModel;
 class CTitleFade;
@@ -42,7 +42,7 @@ public:
 	void Draw(void);							// 描画処理
 
 	static CTitle *Create(void);				// 生成処理
-	static CPlayer *GetPlayer(void);			// プレイヤーの情報取得処理
+	static CCharacter *GetCharacter(void);		// キャラクターの情報取得処理
 	static CCamera *GetCamera(void);			// カメラの情報取得処理
 
 protected:
@@ -55,7 +55,7 @@ private:
 	static CPolygon *m_pPolygon;				// ポリゴン情報
 	static CMeshField *m_pMeshField;			// メッシュフィールドの情報
 	static CLogo *m_pLogo;						// ロゴの情報
-	static CPlayer *m_pPlayer;					// プレイヤーの情報ポインタ
+	static CCharacter *m_pCharacter;			// キャラクターの情報ポインタ
 	static CMeshSphere *m_pMeshSphere;			// メッシュ球の情報ポインタ
 	static CTitleFade *m_pTitleFade;			// タイトルフェードの情報ポインタ
 

@@ -29,7 +29,7 @@ CResult *CRenderer::m_pResult = NULL;					// リザルト情報
 CRanking *CRenderer::m_pRanking = NULL;					// ランキング情報
 CTutorial *CRenderer::m_pTutorial = NULL;				// チュートリアル情報
 CSound *CRenderer::m_pSound = NULL;						// 音情報
-CRenderer::MODE CRenderer::m_mode = MODE_TITLE;		// 最初の画面
+CRenderer::MODE CRenderer::m_mode = MODE_GAME;			// 最初の画面
 
 //==================================================================================================================
 // コンストラクタ

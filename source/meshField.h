@@ -54,8 +54,6 @@ public:
 	D3DXVECTOR3 GetPos(void);								// ˆÊ’uæ“¾ˆ—
 	D3DXVECTOR3 GetMove(void);								// ˆÚ“®—Êæ“¾ˆ—
 
-	float GetHeight(D3DXVECTOR3 pos);						// ‚‚³Zoˆ—
-
 protected:
 
 private:

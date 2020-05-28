@@ -83,7 +83,7 @@ public:
 		PLAYER_MOTION_MAX					// モーションの最大数
 	}PLAYER_MOTION_STATE;
 
-	CPlayer();										// コンストラクタ
+	CPlayer(PRIORITY type);							// コンストラクタ
 	~CPlayer();										// デストラクタ
 	void Init(void);								// 初期化処理
 	void Uninit(void);								// 終了処理
@@ -92,14 +92,14 @@ public:
 
 	static CPlayer *Create(void);					// 生成処理
 
-	void SetPos(D3DXVECTOR3 pos);					// 位置設定処理
-	void SetRot(D3DXVECTOR3 rot);					// 回転設定処理
-	void SetSize(D3DXVECTOR3 size);					// 大きさ設定処理
+	//void SetPos(D3DXVECTOR3 pos);					// 位置設定処理
+	//void SetRot(D3DXVECTOR3 rot);					// 回転設定処理
+	//void SetSize(D3DXVECTOR3 size);					// 大きさ設定処理
 
-	D3DXVECTOR3 GetPos(void) { return m_pos; }		// 位置取得処理
-	D3DXVECTOR3 GetRot(void) { return m_rot; }		// 回転取得処理
-	D3DXVECTOR3 GetMove(void) { return m_move; }	// 移動量取得処理
-	D3DXVECTOR3 GetSize(void) { return m_size; }	// 大きさ取得処理
+	//D3DXVECTOR3 GetPos(void) { return m_pos; }		// 位置取得処理
+	//D3DXVECTOR3 GetRot(void) { return m_rot; }		// 回転取得処理
+	//D3DXVECTOR3 GetMove(void) { return m_move; }	// 移動量取得処理
+	//D3DXVECTOR3 GetSize(void) { return m_size; }	// 大きさ取得処理
 
 protected:
 

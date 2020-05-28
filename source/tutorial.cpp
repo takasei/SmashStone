@@ -32,7 +32,7 @@ CCamera *CTutorial::m_pCamera = NULL;						// カメラ情報
 CLight *CTutorial::m_pLight = NULL;							// ライト情報
 CPolygon *CTutorial::m_pPolygon = NULL;						// ポリゴン情報
 CMeshField *CTutorial::m_pMeshField = NULL;					// メッシュフィールド情報
-CPlayer *CTutorial::m_pPlayer = NULL;						// プレイヤー情報
+CCharacter *CTutorial::m_pCharacter = NULL;					// キャラクター情報
 CLogo *CTutorial::m_pLogo = NULL;							// ロゴ情報
 CMeshSphere *CTutorial::m_pMeshSphere = NULL;				// メッシュ球情報
 CModel *CTutorial::m_pModel[TUTORIAL_MAX_MODEL] = {};		// モデル情報
@@ -159,9 +159,9 @@ CTutorial * CTutorial::Create(void)
 }
 
 //==================================================================================================================
-// プレイヤー情報取得処理
+// キャラクター情報取得処理
 //==================================================================================================================
-CPlayer * CTutorial::GetPlayer(void)
+CCharacter * CTutorial::GetCharacter(void)
 {
-	return m_pPlayer;
+	return m_pCharacter;
 }

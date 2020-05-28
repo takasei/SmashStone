@@ -9,7 +9,6 @@
 //	インクルードファイル
 //==================================================================================================================
 #include "game.h"
-#include "player.h"
 #include "number.h"
 #include "fade.h"
 #include "inputKeyboard.h"
@@ -35,7 +34,7 @@
 //==================================================================================================================
 //	静的メンバ変数宣言
 //==================================================================================================================
-CPlayer *CGame::m_pPlayer = NULL;									// プレイヤー情報
+CCharacter *CGame::m_pCharacter = NULL;								// キャラクター情報
 CMeshField *CGame::m_pMeshField = NULL;								// メッシュフィールド情報
 CCamera *CGame::m_pCamera = NULL;									// カメラ情報
 CLight *CGame::m_pLight = NULL;										// ライト情報
@@ -81,12 +80,12 @@ void CGame::Init(void)
 	// メッシュ球の生成処理
 	m_pMeshSphere = CMeshSphere::Create();
 
-	// プレイヤー生成処理
-	m_pPlayer = CPlayer::Create();
+	// キャラクター生成処理
+	m_pCharacter = CCharacter::Create(CCharacter::CHARACTER_PENGUIN);
 	// 位置設定
-	m_pPlayer->SetPos(D3DXVECTOR3(0, WhileY, 0));
+	m_pCharacter->SetPos(D3DXVECTOR3(0, WhileY, 0));
 	// 回転設定
-	m_pPlayer->SetRot(D3DXVECTOR3(0.0f, -D3DX_PI / 2, 0.0f));
+	m_pCharacter->SetRot(D3DXVECTOR3(0.0f, -D3DX_PI / 2, 0.0f));
 
 	// メッシュフィールド生成
 	m_pMeshField = CMeshField::Create();
@@ -256,7 +255,7 @@ CGame::GAMESTATE CGame::GetGameState(void)
 //==================================================================================================================
 //	プレイヤー情報取得
 //==================================================================================================================
-CPlayer * CGame::GetPlayer(void)
+CCharacter * CGame::GetCharacter(void)
 {
-	return m_pPlayer;
+	return m_pCharacter;
 }

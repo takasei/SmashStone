@@ -43,18 +43,13 @@ int CCharacter::m_nNumAll = 0;											// プレイヤーの人数
 //==================================================================================================================
 // コンストラクタ
 //==================================================================================================================
-CCharacter::CCharacter() :CScene()
-{
-
-}
-
-//==================================================================================================================
-// コンストラクタ
-//==================================================================================================================
-CCharacter::CCharacter(PRIORITY type = CScene::PRIORITY_PLAYER) :CScene(type)
+CCharacter::CCharacter(PRIORITY type = CScene::PRIORITY_PLAYER) : CScene(type)
 {
 	// プレイヤーの人数加算
 	m_nNumAll++;
+
+	// 配列格納のため0番目から格納されるようにする
+	m_nNumAll -= 1;
 }
 
 //==================================================================================================================
@@ -77,7 +72,6 @@ void CCharacter::Init(void)
 	m_difference = D3DXVECTOR3(0.0f, D3DX_PI, 0.0f);		// 回転の目標地点
 	m_move = D3DXVECTOR3(0.0f, 0.0f, 0.0f);					// 移動量
 	m_size = D3DXVECTOR3(1.0f, 1.0f, 1.0f);					// 大きさ
-	m_nCntGravity = 0;										// 重力用カウント
 	m_bJump = false;										// ジャンプしたかどうか
 	m_bWalk = false;										// 歩いているかどうか
 
@@ -93,12 +87,7 @@ void CCharacter::Init(void)
 //==================================================================================================================
 void CCharacter::Uninit(void)
 {
-	// キャラクターの種類がペンギンンとき
-	if (m_Type == CHARACTER_PENGUIN)
-	{
-		// ペンギンの終了処理
-		m_pPenguin->Uninit();
-	}
+
 }
 
 //==================================================================================================================
@@ -114,7 +103,7 @@ void CCharacter::Update(void)
 
 	m_pos = GetPos();					// 位置取得
 	m_rot = GetRot();					// 回転取得
-	m_move = GetMove();					// 移動量取得
+	m_size = GetSize();					// 大きさ取得
 	m_posOld = m_pos;					// 今の位置を前回の位置にする
 
 	// ジャンプスピードが規定値を超えたら
@@ -179,12 +168,13 @@ void CCharacter::Update(void)
 
 	SetPos(m_pos);			// 位置設定
 	SetRot(m_rot);			// 回転設定
-	
+	SetSize(m_size);		// 大きさ設定
+
 #ifdef _DEBUG
 	// デバッグ表示
-	CDebugProc::Print("プレイヤーの位置 : %.2f, %.2f, %.2f\n", m_pos.x, m_pos.y, m_pos.z);
-	CDebugProc::Print("プレイヤーの移動量 : %.2f, %.2f, %.2f\n", m_move.x, m_move.y, m_move.z);
-	CDebugProc::Print("プレイヤーの回転 : %.2f, %.2f, %.2f\n", m_rot.x, m_rot.y, m_rot.z);
+	CDebugProc::Print("キャラクターの位置 : %.2f, %.2f, %.2f\n", m_pos.x, m_pos.y, m_pos.z);
+	CDebugProc::Print("キャラクターの移動量 : %.2f, %.2f, %.2f\n", m_move.x, m_move.y, m_move.z);
+	CDebugProc::Print("キャラクターの回転 : %.2f, %.2f, %.2f\n", m_rot.x, m_rot.y, m_rot.z);
 #endif // _DEBUG
 }
 
@@ -212,13 +202,6 @@ void CCharacter::Draw(void)
 	D3DXMatrixTranslation(&mtxTrans, m_pos.x, m_pos.y, m_pos.z);
 	// 2つの行列の積
 	D3DXMatrixMultiply(&m_mtxWorld, &m_mtxWorld, &mtxTrans);
-
-	// キャラクターの種類がペンギンだったとき
-	if (m_Type == CHARACTER_PENGUIN)
-	{
-		// ペンギンの描画処理
-		m_pPenguin->Draw();
-	}
 }
 
 //==================================================================================================================
@@ -253,11 +236,11 @@ void CCharacter::SetRot(D3DXVECTOR3 rot)
 }
 
 //==================================================================================================================
-// ワールドマトリックス設定
+// 大きさ設定
 //==================================================================================================================
-void CCharacter::SetMtx(D3DMATRIX mtxWorld)
+void CCharacter::SetSize(D3DXVECTOR3 size)
 {
-	m_mtxWorld = mtxWorld;
+	m_size = size;
 }
 
 //==================================================================================================================

@@ -24,7 +24,7 @@ class CCamera;
 class CLight;
 class CPolygon;
 class CMeshField;
-class CPlayer;
+class CCharacter;
 class CLogo;
 class CModel;
 class CMeshSphere;
@@ -45,7 +45,7 @@ public:
 	void Draw(void);								// 描画処理
 
 	static CTutorial *Create(void);					// 生成処理
-	static CPlayer *GetPlayer(void);				// プレイヤーの情報取得処理
+	static CCharacter *GetCharacter(void);			// キャラクターの情報取得処理
 
 protected:
 
@@ -55,7 +55,7 @@ private:
 	static CLight *m_pLight;						// ライトのの情報ポインタ
 	static CPolygon *m_pPolygon;					// ポリゴンの情報ポインタ
 	static CMeshField *m_pMeshField;				// メッシュフィールドの情報ポインタ
-	static CPlayer *m_pPlayer;						// プレイヤーの情報ポインタ
+	static CCharacter *m_pCharacter;				// キャラクターの情報ポインタ
 	static CLogo *m_pLogo;							// ロゴの情報ポインタ
 	static CModel *m_pModel[TUTORIAL_MAX_MODEL];	// モデルの情報ポインタ
 	static CMeshSphere *m_pMeshSphere;				// メッシュ球の情報ポインタ

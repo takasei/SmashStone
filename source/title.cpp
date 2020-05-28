@@ -20,7 +20,7 @@
 #include "light.h"
 #include "meshField.h"
 #include "motionModel.h"
-#include "player.h"
+#include "character.h"
 #include "inputGamepad.h"
 #include "meshSphere.h"
 
@@ -37,7 +37,7 @@ CCamera *CTitle::m_pCamera = NULL;					// カメラ情報
 CLight *CTitle::m_pLight = NULL;					// ライト情報
 CPolygon *CTitle::m_pPolygon = NULL;				// ポリゴン情報
 CMeshField *CTitle::m_pMeshField = NULL;			// メッシュフィールド情報
-CPlayer *CTitle::m_pPlayer = NULL;					// プレイヤー情報
+CCharacter *CTitle::m_pCharacter = NULL;			// キャラクター情報
 CMeshSphere *CTitle::m_pMeshSphere = NULL;			// メッシュ球情報
 
 //==================================================================================================================
@@ -180,11 +180,11 @@ CTitle * CTitle::Create(void)
 }
 
 //==================================================================================================================
-// プレイヤー情報取得
+// キャラクター情報取得
 //==================================================================================================================
-CPlayer * CTitle::GetPlayer(void)
+CCharacter * CTitle::GetCharacter(void)
 {
-	return m_pPlayer;
+	return m_pCharacter;
 }
 
 //==================================================================================================================
